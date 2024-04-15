@@ -18,18 +18,16 @@ def move_turtle_square():
         rate = rospy.Rate(1)  # 1 Hz, adjust as needed
         
         # Create a Twist message for moving forward 
-        cmd_vel_msg = Twist() 
-        cmd_vel_msg.linear.x = 2.0  # Linear velocity
-        velocity_publisher.publish(cmd_vel_msg) # Publish!
+        forward_cmd_vel_msg = Twist() 
+        forward_cmd_vel_msg.linear.x = 2.0  # Linear velocity
+        velocity_publisher.publish(forward_cmd_vel_msg) # Publish!
+        time.sleep(2)  # Adjust sleep time as needed
 
-        rate.sleep()
-
-        # Create a Twist message for moving backward 
-        cmd_vel_msg = Twist()
-        cmd_vel_msg.linear.x = -2.0  # Linear velocity
-        velocity_publisher.publish(cmd_vel_msg) # Publish!
-
-        rate.sleep()
+        # Create a Twist message for rotating
+        rotate_cmd_vel_msg = Twist()
+        rotate_cmd_vel_msg.angular.z = 1.5708  # Angular velocity for 90 degrees rotation
+        velocity_publisher.publish(rotate_cmd_vel_msg) # Publish!
+        time.sleep(1)  # Adjust sleep time as needed
 
         ###########################################
 
@@ -39,4 +37,3 @@ if __name__ == '__main__':
         move_turtle_square() 
     except rospy.ROSInterruptException: 
         pass
-        
