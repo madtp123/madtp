@@ -1,4 +1,4 @@
-0# parameters
+# parameters
 ARG REPO_NAME="madtp"
 ARG DESCRIPTION="Base class repo for UML EECE 5560"
 ARG MAINTAINER="Paul Robinette (paul_robinette@uml.edu)"
