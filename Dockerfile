@@ -1,6 +1,6 @@
 0# parameters
-ARG madtp="eece5560-base"
-ARG hello="Base class repo for UML EECE 5560"
+ARG REPO_NAME="madtp"
+ARG DESCRIPTION="Base class repo for UML EECE 5560"
 ARG MAINTAINER="Paul Robinette (paul_robinette@uml.edu)"
 # pick an icon from: https://fontawesome.com/v4.7.0/icons/
 ARG ICON="cube"
