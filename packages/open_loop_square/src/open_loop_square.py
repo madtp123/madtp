@@ -53,7 +53,7 @@ class Drive_Square:
         # Turn left
         self.cmd_msg.header.stamp = rospy.Time.now()
         self.cmd_msg.v = 0.0  # Stop the forward motion
-        self.cmd_msg.omega = -0.5  # Angular velocity for turning
+        self.cmd_msg.omega = 0.5  # Angular velocity for turning
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Turn!")
         rospy.sleep(1)  # Adjust this duration to make a 90-degree turn
@@ -63,8 +63,6 @@ class Drive_Square:
         ######################
         
         # Repeat the same process for the remaining sides of the square
-        # Adjust the duration of forward motion and turning as necessary to make a proper square
-        
         # Move forward for the second side
         self.cmd_msg.header.stamp = rospy.Time.now()
         self.cmd_msg.v = 0.5  # straight line velocity
@@ -80,7 +78,7 @@ class Drive_Square:
         # Turn left again
         self.cmd_msg.header.stamp = rospy.Time.now()
         self.cmd_msg.v = 0.0  # Stop the forward motion
-        self.cmd_msg.omega = -0.5  # Angular velocity for turning
+        self.cmd_msg.omega = 0.5  # Angular velocity for turning
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Turn!")
         rospy.sleep(1)  # Adjust this duration to make a 90-degree turn
@@ -104,7 +102,7 @@ class Drive_Square:
         # Turn left again
         self.cmd_msg.header.stamp = rospy.Time.now()
         self.cmd_msg.v = 0.0  # Stop the forward motion
-        self.cmd_msg.omega = -0.5  # Angular velocity for turning
+        self.cmd_msg.omega = 0.5  # Angular velocity for turning
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Turn!")
         rospy.sleep(1)  # Adjust this duration to make a 90-degree turn
@@ -127,7 +125,7 @@ class Drive_Square:
         # Turn left again
         self.cmd_msg.header.stamp = rospy.Time.now()
         self.cmd_msg.v = 0.0  # Stop the forward motion
-        self.cmd_msg.omega = -0.5  # Angular velocity for turning
+        self.cmd_msg.omega = 0.5  # Angular velocity for turning
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Turn!")
         rospy.sleep(1)  # Adjust this duration to make a 90-degree turn
