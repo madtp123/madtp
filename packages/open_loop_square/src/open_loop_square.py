@@ -44,7 +44,7 @@ class Drive_Square:
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
-        rospy.sleep(2)  # Adjust this duration to make sure the robot moves straight enough
+        rospy.sleep(1)  # Adjust this duration to make sure the robot moves straight enough
         
         self.stop_robot()  # Stop after moving straight
         
@@ -69,7 +69,7 @@ class Drive_Square:
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
-        rospy.sleep(2)  # Adjust this duration to make sure the robot moves straight enough
+        rospy.sleep(1)  # Adjust this duration to make sure the robot moves straight enough
         
         self.stop_robot()  # Stop after moving straight
         
@@ -93,7 +93,7 @@ class Drive_Square:
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
-        rospy.sleep(2)  # Adjust this duration to make sure the robot moves straight enough
+        rospy.sleep(1)  # Adjust this duration to make sure the robot moves straight enough
         
         self.stop_robot()  # Stop after moving straight
         
@@ -116,7 +116,7 @@ class Drive_Square:
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
-        rospy.sleep(2)  # Adjust this duration to make sure the robot moves straight enough
+        rospy.sleep(1)  # Adjust this duration to make sure the robot moves straight enough
         
         self.stop_robot()  # Stop after moving straight
         
