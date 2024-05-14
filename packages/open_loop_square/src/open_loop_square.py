@@ -45,7 +45,9 @@ class Drive_Square:
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
         rospy.sleep(2)  # Adjust this duration to make sure the robot moves straight enough
+        
         self.stop_robot()  # Stop after moving straight
+        
         rospy.sleep(1)  # Wait a moment before starting the turn
         
         # Turn left
@@ -54,13 +56,85 @@ class Drive_Square:
         self.cmd_msg.omega = 0.5  # Angular velocity for turning
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Turn!")
-        rospy.sleep(2)  # Adjust this duration to make a 90-degree turn
+        rospy.sleep(1)  # Adjust this duration to make a 90-degree turn
+        
         self.stop_robot()  # Stop after turning
-        rospy.sleep(1)  # Wait a moment before starting the turn
         
         ######################
         
+        # Repeat the same process for the remaining sides of the square
+        # Move forward for the second side
+        self.cmd_msg.header.stamp = rospy.Time.now()
+        self.cmd_msg.v = 0.5  # straight line velocity
+        self.cmd_msg.omega = 0.0
+        self.pub.publish(self.cmd_msg)
+        rospy.loginfo("Forward!")
+        rospy.sleep(2)  # Adjust this duration to make sure the robot moves straight enough
+        
+        self.stop_robot()  # Stop after moving straight
+        
+        rospy.sleep(1)  # Wait a moment before starting the turn
+        
+        # Turn left again
+        self.cmd_msg.header.stamp = rospy.Time.now()
+        self.cmd_msg.v = 0.0  # Stop the forward motion
+        self.cmd_msg.omega = 0.5  # Angular velocity for turning
+        self.pub.publish(self.cmd_msg)
+        rospy.loginfo("Turn!")
+        rospy.sleep(1)  # Adjust this duration to make a 90-degree turn
+        
+        self.stop_robot()  # Stop after turning
+        
+        # Repeat the same process for the remaining sides of the square
 
+        # Move forward for the third side
+        self.cmd_msg.header.stamp = rospy.Time.now()
+        self.cmd_msg.v = 0.5  # straight line velocity
+        self.cmd_msg.omega = 0.0
+        self.pub.publish(self.cmd_msg)
+        rospy.loginfo("Forward!")
+        rospy.sleep(2)  # Adjust this duration to make sure the robot moves straight enough
+        
+        self.stop_robot()  # Stop after moving straight
+        
+        rospy.sleep(1)  # Wait a moment before starting the turn
+        
+        # Turn left again
+        self.cmd_msg.header.stamp = rospy.Time.now()
+        self.cmd_msg.v = 0.0  # Stop the forward motion
+        self.cmd_msg.omega = 0.5  # Angular velocity for turning
+        self.pub.publish(self.cmd_msg)
+        rospy.loginfo("Turn!")
+        rospy.sleep(1)  # Adjust this duration to make a 90-degree turn
+        
+        self.stop_robot()  # Stop after turning
+
+        # Repeat the same process for the fourth side
+        # Move forward for the fourth side
+        self.cmd_msg.header.stamp = rospy.Time.now()
+        self.cmd_msg.v = 0.5  # straight line velocity
+        self.cmd_msg.omega = 0.0
+        self.pub.publish(self.cmd_msg)
+        rospy.loginfo("Forward!")
+        rospy.sleep(2)  # Adjust this duration to make sure the robot moves straight enough
+        
+        self.stop_robot()  # Stop after moving straight
+        
+        rospy.sleep(1)  # Wait a moment before starting the turn
+        
+        # Turn left again
+        self.cmd_msg.header.stamp = rospy.Time.now()
+        self.cmd_msg.v = 0.0  # Stop the forward motion
+        self.cmd_msg.omega = 0.5  # Angular velocity for turning
+        self.pub.publish(self.cmd_msg)
+        rospy.loginfo("Turn!")
+        rospy.sleep(1)  # Adjust this duration to make a 90-degree turn
+        
+        self.stop_robot()  # Stop after turning
+        
+        ######################
+        
+        self.stop_robot()  # Ensure the robot stops at the end
 
 if __name__ == '__main__':
     try:
